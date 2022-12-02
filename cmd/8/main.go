@@ -20,24 +20,28 @@ func userSlicing(users []string, length int) {
 	var (
 		start = 0
 		//different  = 0
-		realLength = 0
+		//realLength = 0
 	)
 	total := len(users) / length
+	remainder := len(users) % length
+	fmt.Println(remainder, total)
 	for i := 1; i <= length; i++ {
+		fmt.Println("Start : ", start, ", total : ", total)
+		fmt.Println(users[start:total])
+
+		start += total
+		total += total
+
 		//fmt.Println("Start : ", start, ", total : ", total)
-		//fmt.Println(users[start:total])
-		//
+		//if remainder != 0 && i == length {
+		//	fmt.Println(users[start:remainder])
+		//} else {
+		//	fmt.Println(users[start:total])
+		//}
 		//start += total
 		//total += total
 
-		if len(users) >= total {
-			fmt.Println("Start : ", start, ", total : ", total, ", real length: ", realLength)
-			fmt.Println(users[start:total])
-
-			realLength = len(users[start:total])
-			start += total
-			total += total
-		}
+		fmt.Println(i)
 	}
 }
 
