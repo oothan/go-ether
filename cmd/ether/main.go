@@ -16,7 +16,13 @@ import (
 )
 
 func main() {
-	ETHTransferFrom(21, "", "", "")
+	hash, _ := ETHTransferFrom(
+		8,
+		"0x92e1f9dbD7D95a2eC3bFb1665744cF46b1f34C81",
+		"0xe9919fe1e8fdfcd504b9526d88749e96f8cb3acf",
+		"9855a21905d395f16f5b3b053995ef41a2817147fbe90873ffa3f4dbaef40d4e",
+	)
+	fmt.Println(hash)
 }
 
 func ETHTransferFrom(balance float64, _fromAddress, _toAddress, _privateKey string) (string, error) {
