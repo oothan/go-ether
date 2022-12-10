@@ -1,4 +1,4 @@
-pragma solidity ^0.5.16;
+pragma solidity ^0.8.17;
 
 contract Store {
   event ItemSet(bytes32 key, bytes32 value);
