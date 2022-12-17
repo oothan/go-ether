@@ -59,10 +59,14 @@ func main() {
 		//fmt.Println("resp : ", string(msg))
 		//fmt.Println(resp.Params.Result.TransactionHash)
 
+		resp.Params.Result.TransactionHash = "0x2ac0c9234688c71ac7c407a35701346ff3bc44b99a778ec8bac4115cbbf6f2f8"
 		hash := common.HexToHash(resp.Params.Result.TransactionHash)
 		_, isPending, err := client.TransactionByHash(context.Background(), hash)
 		if err != nil {
-			fmt.Println(err)
+			if err.Error() == "not found" {
+				fmt.Println("TRUE")
+			}
+			fmt.Println(err, "IIIIIIIIIIIIIIII")
 		}
 
 		fmt.Println("isPending :", isPending, ", hash :", hash.Hex())
