@@ -17,7 +17,8 @@ func main() {
 		log.Fatalf("failed to connect to ether RPC server: %v:\n", err)
 	}
 
-	hash := common.HexToHash("0xedcc85dcc811625f9c3fe4f596b298f8d53b5b6e54b4fb8beee0e921472e8ca8")
+	//hash := common.HexToHash("0xedcc85dcc811625f9c3fe4f596b298f8d53b5b6e54b4fb8beee0e921472e8ca8")
+	hash := common.HexToHash("0x49df63f80f476aa2ed31bbc59b9da92ad5e48ddca9e3a2d8099ec5bd9424480d")
 	resp, isPending, err := client.TransactionByHash(context.Background(), hash)
 	if err != nil {
 		logger.Sugar.Error(err)
